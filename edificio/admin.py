@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from edificio.models import Consorcio, Inquilino, Propietario
+from .models import Consorcio, Inquilino, Propietario
 
 # Register your models here.
 
