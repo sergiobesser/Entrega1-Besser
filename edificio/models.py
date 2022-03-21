@@ -8,7 +8,6 @@ class Propietario(models.Model):
     apellido = models.CharField(max_length=30)
     email = models.EmailField()
     unidad = models.CharField(max_length=3)
-    # habita = models.BooleanField()
     
     def __str__(self):
         return f'{self.nombre} {self.apellido}'

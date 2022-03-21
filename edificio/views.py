@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 
-from edificio.models import Consorcio, Inquilino
+from edificio.models import Consorcio, Inquilino, Propietario
 from .forms import ConsorcioFormulario, InquilinoFormulario, PropietarioFormulario, BusquedaInquilino
 # Create your views here.
 
@@ -10,7 +10,7 @@ def propietario(request):
         
         if form.is_valid():
             data = form.cleaned_data
-            propietario = Inquilino(nombre=data['nombre'], apellido=data['apellido'], email=data['email'], unidad=data['unidad'], habita_la_unidad=data['habita_la_unidad'])
+            propietario = Propietario(nombre=data['nombre'], apellido=data['apellido'], email=data['email'], unidad=data['unidad'])
             propietario.save()
             return redirect('index')
     
