@@ -27,7 +27,7 @@
                 <a class="navbar-brand" href={% url 'propietario' %}>Propietario</a>
                 <a class="navbar-brand" href={% url 'inquilino' %}>Inquilino</a>
                 <a class="navbar-brand" href={% url 'consorcio' %}>Consorcio</a>
-                <a class="btn btn-primary" href="#signup">Sign Up</a>
+                <a class="navbar-brand" href={% url 'busqueda_inquilino' %}>Busqueda Inquilino</a>
             </div>
         </nav>
         <!-- Masthead-->
@@ -48,7 +48,6 @@
         {% endblock 'header_block' %}
 
         {% block 'body_block' %}
-        <h1>Este es el index</h1>
         {% endblock 'body_block' %}
        
                 <!-- Footer-->

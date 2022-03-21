@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 
 from edificio.models import Consorcio, Inquilino
-from .forms import ConsorcioFormulario, InquilinoFormulario, PropietarioFormulario
+from .forms import ConsorcioFormulario, InquilinoFormulario, PropietarioFormulario, BusquedaInquilino
 # Create your views here.
 
 def propietario(request):   
@@ -44,3 +44,15 @@ def consorcio(request):
         
     form = ConsorcioFormulario()
     return render(request, 'edificio/consorcio.html',{'form': form})
+
+
+def busqueda_inquilino(request):
+    inquilinos = []
+    nombre_a_buscar = request.GET.get('nombre', None)
+    if nombre_a_buscar is not None:
+        inquilinos = Inquilino.objects.filter(nombre__icontains=nombre_a_buscar)
+    # else:
+    #     inquilinos = Inquilino.objects.all()
+    
+    form = BusquedaInquilino()
+    return render(request, 'edificio/busqueda_inquilino.html', {'form': form, 'inquilinos': inquilinos})

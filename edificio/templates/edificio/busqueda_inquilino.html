@@ -1,0 +1,25 @@
+{% extends 'index/index.html' %}
+
+{% block head %}
+<title>Busqueda Inquilino</title>
+{% endblock head %}
+
+{% block 'header_block' %}
+{% endblock 'header_block' %}
+
+
+{% block 'body_block' %}
+
+    <form action="" method="get">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button>Buscar</button>
+    </form>
+
+    {% for inquilino in inquilinos %}
+    <li>{{inquilino}}</li>
+    {% endfor %}
+
+{% endblock 'body_block' %}
