@@ -5,6 +5,7 @@ class PropietarioFormulario(forms.Form):
     apellido = forms.CharField(max_length=30)
     email = forms.EmailField()
     unidad = forms.CharField(max_length=3)
+    # habita_la_unidad = forms.BooleanField(required=False)
     
     
 class InquilinoFormulario(forms.Form):
